@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/markets
+    username: user
+    password: password
+
+  # Ensure schema.sql runs even when using external Postgres.
+  sql:
+    init:
+      mode: always
+
+  ai:
+    openai:
+      base-url: https://opencode.ai/zen
+      api-key: ${OPENAI_API_KEY:}
+
+      chat:
+        options:
+          model: minimax-m2.5-free
+
+      embedding:
+        enabled: true
+        options:
+          model: text-embedding-3-small
+
+    ollama:
+      base-url: http://localhost:11434
+
+      embedding:
+        enabled: false
+
+    vectorstore:
+      pgvector:
+        initialize-schema: true
+        dimensions: 1024
+        table-name: market_vectors
