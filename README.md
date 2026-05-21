@@ -1,4 +1,4 @@
-# Financial RAG Demo
+# Financial RAG Spring Boot
 
 Production-style Retrieval-Augmented Generation (RAG) demo built with Spring Boot 4, Spring AI, and pgvector. It ingests a financial market PDF on startup, stores embeddings in PostgreSQL/pgvector, and serves a simple chat endpoint that answers questions using retrieved context.
 
